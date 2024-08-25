@@ -1,0 +1,12 @@
+# Compiled object files
+*.o
+
+# Executable files
+*.exe
+*.out
+
+# Build output directory
+build/
+
+# IDE specific files
+.vscode/
