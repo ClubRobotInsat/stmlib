@@ -31,7 +31,7 @@ Contributions are welcome! If you have any improvements or bug fixes, feel free 
 - CAN bus
 - [...]
 
-## How to work on this project
+## How to contribute to this project
 
 [To do]
 
@@ -54,7 +54,7 @@ Initialize and update your submodules to fetch the code :
 
 `git submodule update`
 
-**3. (Optional) Update submodule to get the latest version from GitHub**
+**3. Update submodule to get the latest version from GitHub**
 
 `git submodule update`
 
@@ -64,7 +64,7 @@ To use a specific component from the library, follow the instructions provided i
 
 ### DC motor
 
-Description of component 1 and how to use it.
+View the [DC motor documentation](dcmotor/dcmotor_doc.md) for more information.
 
 ### Encoder
 
