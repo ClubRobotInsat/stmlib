@@ -6,9 +6,6 @@ This repository contains embedded code for different components on the STM32 boa
 
 Contributions are welcome! If you have any improvements or bug fixes, feel free to submit a pull request.
 
-## Quick Start
-[To do]
-
 ## Table of Contents
 
 - [Components supported list](#components-supported-list)

@@ -1,7 +1,5 @@
 # DC Motor
 
-
-
 ## Table of Contents
 - [How does it work?](#how-does-it-work)
 - [STM32 configuration](#stm32-configuration)
@@ -16,14 +14,15 @@ Feel free to contribute to this documentation by submitting pull requests or ope
 - STM32 (timers, PWM, GPIO)
 - CubeIDE
 
-## STM32 configurations
+## Connections
 
-To connect the DC motor to your microcontroller, follow these steps:
+To connect the DC motor to your microcontroller, you will need a H-bridge for interface. The circuit a as follow:
 
-1. Identify the motor terminals: Most DC motors have two terminals, labeled as positive (+) and negative (-).
-2. Connect the positive terminal of the motor to a digital output pin on your microcontroller.
-3. Connect the negative terminal of the motor to the ground (GND) pin on your microcontroller.
-4. Make sure to provide sufficient power to the motor. Check the motor's datasheet for the recommended voltage and current ratings.
+[insert circuit]
+
+## STM32 configuration
+
+
 
 ## Code Example
 
