@@ -100,7 +100,7 @@ void Motor_Set_Direction(Motor_Config * motor, uint8_t direction);
  *
  * @param motor Pointer to a Motor_Config structure
  */
-void Motor_Toogle_Direction(Motor_Config * motor);
+void Motor_Toggle_Direction(Motor_Config * motor);
 
 /**
  * @brief Get the current duty cycle of PWM sent to DC motor
