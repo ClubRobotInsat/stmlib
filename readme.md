@@ -32,7 +32,20 @@ Contributions are welcome! If you have any improvements or bug fixes, feel free 
 
 ## How to contribute to this project
 
-[To do]
+Clone the project to your local machine with the following command :
+`git clone [link]`
+
+Create a new branch with the following command :
+`git checkout -b [branch_name]`
+
+Make your changes and commit them with the following commands :
+`git add .`
+`git commit -m "Your message"`
+
+Push your changes to the remote repository with the following command :
+`git push origin [branch_name]`
+
+When the development is finished, create a pull request on GitHub.
 
 ## How to use this library
 **0. Create your STM32 project**
@@ -60,7 +73,9 @@ Initialize and update your submodules to fetch the code :
 
 **3. Update submodule to get the latest version from GitHub**
 
-`git submodule update`
+In the submodule repo :
+`git pull`
+
 
 **4. Add the library to your project**
 
