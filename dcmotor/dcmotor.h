@@ -97,7 +97,7 @@ void Motor_Set_Speed(Motor_Config * motor, uint8_t duty_cycle);
 void Motor_Set_Direction(Motor_Config * motor, uint8_t direction);
 
 /**
- * @fn void Motor_Toogle_Direction(Motor_Config)
+ * @fn void Motor_Toggle_Direction(Motor_Config)
  * @brief Toggle the direction of motor
  *
  * @param motor Pointer to a Motor_Config structure
