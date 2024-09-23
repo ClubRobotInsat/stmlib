@@ -58,6 +58,8 @@ typedef enum {
  * @param DIR_Pin GPIO Pin for direction pin
  * @param TIM Timer for PWM signal
  * @param TIM_Channel Timer Channel for PWM signal
+ *                    can be one of the following value:
+ *                    - TIM_CHANNEL_x with x is between 1 and 6
  */
 void Motor_Init(Motor_Config * motor, GPIO_TypeDef  * DIR_Port, uint16_t DIR_Pin, TIM_HandleTypeDef * TIM, uint32_t TIM_Channel);
 
