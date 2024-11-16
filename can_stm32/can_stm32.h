@@ -45,7 +45,7 @@ extern "C" {
 */
 
 /**
- * Message structure for CAN communication.
+ * Message structure for CAN communication in 2023 - 2024
  * |                       Header (11 bits)                 |                              Data (8 bytes)                              |
  * | Priority (3 bits) | Dest ID (4 bits) | Src ID (4 bits) | Command ID (1 byte) | 1st Param (1 byte) | Optionnal Parameter (6 bytes) |
  */
@@ -144,6 +144,13 @@ uint8_t CAN_decodeIDSrc(void);
  * @return None
  */
 void CAN_sendBackPing(uint8_t destID);
+
+/**
+ * @brief Error handler for the CAN peripheral. To be implemented by the user.
+ *        Default implementation is empty.
+ * 
+ */
+__attribute__((weak)) void CAN_errorHandler(void);
 
 #ifdef __cplusplus
 }

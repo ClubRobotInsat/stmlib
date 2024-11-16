@@ -33,8 +33,6 @@ uint8_t canRX[8] = {0,0,0,0,0,0,0,0};
 uint8_t canTX[8] = {0,0,0,0,0,0,0,0};
 void (*CAN_receiveCallback)(void);
 
-void CAN_errorHandler(void);
-
 void CAN_initInterface(FDCAN_HandleTypeDef * hfdcan, uint8_t idSTM){
     canHandle = hfdcan;
     CAN_ID_STM = idSTM;
