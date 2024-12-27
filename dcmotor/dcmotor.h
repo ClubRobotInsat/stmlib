@@ -9,6 +9,8 @@
  * 
  */
 
+#ifdef MOTOR_DC_ENABLED
+
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef MOTOR_DC
 #define MOTOR_DC
@@ -125,6 +127,8 @@ uint8_t Motor_Get_Direction(Motor_Config * motor);
 
 #ifdef __cplusplus
 }
+#endif
+
 #endif
 
 #endif

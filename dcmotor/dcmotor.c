@@ -9,6 +9,8 @@
  * 
  */
 
+#ifdef MOTOR_DC_ENABLED
+
 /* Includes ------------------------------------------------------------------*/
 #include "dcmotor.h"
 
@@ -58,3 +60,5 @@ uint8_t Motor_Get_Duty_Cycle(Motor_Config * motor){
 uint8_t Motor_Get_Direction(Motor_Config * motor){
 	return HAL_GPIO_ReadPin(motor->DIR_Port, motor->DIR_Pin);
 }
+
+#endif

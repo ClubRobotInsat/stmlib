@@ -101,6 +101,20 @@ Some elements in the library require the STM32 board hardware to be configured p
 
 For example : dcmotor.h requires a timer to be configured so that stm32g4xx_hal_tim.h is included in the project.
 ```
+**5. Include the library in your code**
+To include the library in your code, add the following line at the beginning of your code and replace `library_name` with the name of the library you want to include:
+
+```C
+// In order for the compiler to compiler the livrary
+#define LIBRARY_NAME_ENABLED
+// Include the library
+#include "library_name/library_name.h"
+```
+
+```markdown
+# Notes :
+Check for code example in each module documentation.
+```
 
 That's it! You can now include the library in your code. Check the [components](#components) section for more exemples.
 
