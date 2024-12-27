@@ -19,6 +19,7 @@ extern "C" {
 
 /* Includes ---------------------------------*/
 #include "stm32g4xx_hal.h"
+#include "stm32g4xx_hal_tim.h"
 
 /* #######################################################################################
  * WARNING : This driver assume that the frequency of PWM signal for DC Motor is 20kHz !!!
