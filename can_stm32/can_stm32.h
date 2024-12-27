@@ -11,6 +11,8 @@
  * @version 1.0
  */
 
+#ifdef CAN_STM32_ENABLED
+
 #ifndef CAN_STM32_H_
 #define CAN_STM32_H_
 
@@ -22,6 +24,8 @@ extern "C" {
 #include <stdint.h>
 #include <stdbool.h>
 #include "stm32g4xx_hal.h"
+#include "stm32g4xx_hal_fdcan.h"
+
 /*
 * The configuration of the CAN peripheral on the STM32 is done using the STM32CubeMX software.
 * STM32 Configurations required (with MCP2551):
@@ -157,3 +161,5 @@ __attribute__((weak)) void CAN_errorHandler(void);
 #endif
 
 #endif /* CAN_STM32_H_ */
+
+#endif /* CAN_STM32_ENABLED */

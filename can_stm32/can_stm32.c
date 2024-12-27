@@ -6,6 +6,8 @@
  * @version 1.0
  */
 
+#ifdef CAN_STM32_ENABLED
+
 #include "can_stm32.h"
 
 /**
@@ -143,3 +145,5 @@ void CAN_errorHandler(void)
 {
     /* Error handling to implement */
 }
+
+#endif /* CAN_STM32_ENABLED */
