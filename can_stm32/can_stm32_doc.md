@@ -94,6 +94,85 @@ To configure the CAN peripheral to work with the MCP2551 transceiver and with a 
 - **Nominal Time Seg2** : 4
 
 ## Code Example
+```c
+/* Includes ------------------------------------------------------------------*/
+#include "main.h"
 
+/* Private includes ----------------------------------------------------------*/
+/* USER CODE BEGIN Includes */
+#include "can_stm32/can_stm32.h"
+/* USER CODE END Includes */
+
+/* Private variables ---------------------------------------------------------*/
+FDCAN_HandleTypeDef hfdcan1;
+
+/* Private function prototypes -----------------------------------------------*/
+void SystemClock_Config(void);
+static void MX_GPIO_Init(void);
+static void MX_FDCAN1_Init(void);
+
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+void decodeCanMsg(void){
+	/* Code */
+}
+/* USER CODE END 0 */
+
+/**
+  * @brief  The application entry point.
+  * @retval int
+  */
+int main(void)
+{
+
+  /* USER CODE BEGIN 1 */
+
+  /* USER CODE END 1 */
+
+  /* MCU Configuration--------------------------------------------------------*/
+
+  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  HAL_Init();
+
+  /* USER CODE BEGIN Init */
+  const uint8_t CAN_STM_ID = 2;
+  CAN_initInterface(&hfdcan1, CAN_STM_ID);
+  CAN_filterConfig();
+  CAN_setReceiveCallback(decodeCanMsg);
+  CAN_start();
+  /* USER CODE END Init */
+
+  /* Configure the system clock */
+  SystemClock_Config();
+
+  /* USER CODE BEGIN SysInit */
+
+  /* USER CODE END SysInit */
+
+  /* Initialize all configured peripherals */
+  MX_GPIO_Init();
+  MX_FDCAN1_Init();
+  /* USER CODE BEGIN 2 */
+  uint8_t dataToSend[8] = {2,4,6,8,10,12,14,16};
+  /* USER CODE END 2 */
+
+  /* Infinite loop */
+  /* USER CODE BEGIN WHILE */
+  while (1)
+  {
+    /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
+	  CAN_send(dataToSend, 0, CAN_ID_MASTER);
+	  HAL_Delay(10);
+	  CAN_read();
+	  HAL_Delay(10);
+	  CAN_sendBackPing(CAN_ID_MASTER);	
+	  HAL_Delay(10);
+  }
+  /* USER CODE END 3 */
+}
+```
 
 ## To-Do List for Enhancement
+- [ ] Implement interrupt-based receive function
