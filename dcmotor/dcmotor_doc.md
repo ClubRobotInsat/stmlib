@@ -40,11 +40,12 @@ For other output pins, you should configure them as follows:
 
 ## Code Example
 
-```C
-/* USER CODE BEGIN Header */
-#define MOTOR_DC_ENABLED
-/* USER CODE END Header */
+```markdown
+# Attention
+Remember to activate the DC motor module in the `stmlib_conf.h` file before using the DC motor library.
+```
 
+```C
 /* USER CODE BEGIN Includes */
 #include "dcmotor/dcmotor.h"
 /* USER CODE END Includes */

@@ -9,8 +9,8 @@ Contributions are welcome! If you have any improvements or bug fixes, feel free 
 ## Table of Contents
 
 - [Components supported list](#components-supported-list)
-- [How to work on this project](#how-to-work-on-this-project)
 - [How to use this library](#how-to-use-this-library)
+- [How to work on this project](#how-to-work-on-this-project)
 - [Components](#components)
     - [DC Motor](#dc-motor)
     - [Encoder](#encoder)
@@ -29,23 +29,6 @@ Contributions are welcome! If you have any improvements or bug fixes, feel free 
 - Herkulex Servo
 - CAN bus
 - [...]
-
-## How to contribute to this project
-
-Clone the project to your local machine with the following command :
-`git clone [link]`
-
-Create a new branch with the following command :
-`git checkout -b [branch_name]`
-
-Make your changes and commit them with the following commands :
-`git add .`
-`git commit -m "Your message"`
-
-Push your changes to the remote repository with the following command :
-`git push origin [branch_name]`
-
-When the development is finished, create a pull request on GitHub.
 
 ## How to use this library
 **0. Create your STM32 project**
@@ -101,22 +84,39 @@ Some elements in the library require the STM32 board hardware to be configured p
 
 For example : dcmotor.h requires a timer to be configured so that stm32g4xx_hal_tim.h is included in the project.
 ```
-**5. Include the library in your code**
-To include the library in your code, add the following line at the beginning of your code and replace `library_name` with the name of the library you want to include:
+**5. Activate modules of the library**
+
+By default, all modules of the library are disabled to avoid STM32CubeIDE compilation errors. Hence, even if you include the library in your code, the code of the library will not be compiled. 
+To active a module,  uncomment the line in the `stmlib_conf.h` with the name of the module you want to activate:
 
 ```C
-// In order for the compiler to compiler the livrary
-#define LIBRARY_NAME_ENABLED
-// Include the library
-#include "library_name/library_name.h"
-```
+// In stmlib_conf.h
+/* DC Motor */
+#define MOTOR_DC_ENABLED // <-- Uncomment this line to activate the DC motor module
 
-```markdown
-# Notes :
-Check for code example in each module documentation.
 ```
 
 That's it! You can now include the library in your code. Check the [components](#components) section for more exemples.
+
+## How to contribute to this project
+
+**0. Add `stmlib` as a submodule**
+
+Create a STM32 project (use for testing) and add the library as a submodule (see [How to use this library](#how-to-use-this-library))
+
+**1. To create a new feature or fix a bug**
+
+- Create a new branch with the following command :
+`git checkout -b [branch_name]`
+
+- Make your changes and commit them with the following commands :
+`git add .`
+`git commit -m "Your message"`
+
+- Push your changes to the remote repository with the following command :
+`git push origin [branch_name]`
+
+- Create a pull request on GitHub to merge the development branch with the main branch
 
 ## Components
 
