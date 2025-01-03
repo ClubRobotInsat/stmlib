@@ -6,9 +6,9 @@
  * @version 1.0
  */
 
-#ifdef CAN_STM32_ENABLED
-
 #include "can_stm32.h"
+
+#ifdef CAN_STM32_ENABLED
 
 /**
  * Variable to handling the CAN interface

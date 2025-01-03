@@ -11,6 +11,8 @@
  * @version 1.0
  */
 
+#include "../stmlib_conf.h"
+
 #ifdef CAN_STM32_ENABLED
 
 #ifndef CAN_STM32_H_
