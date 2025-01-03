@@ -9,11 +9,14 @@
  * 
  */
 
+#include "../stmlib_conf.h"
+
 #ifdef MOTOR_DC_ENABLED
 
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef MOTOR_DC
 #define MOTOR_DC
+#endif /* MOTOR_DC */
 
 #ifdef __cplusplus
 extern "C" {
@@ -129,6 +132,4 @@ uint8_t Motor_Get_Direction(Motor_Config * motor);
 }
 #endif
 
-#endif
-
-#endif
+#endif /* MOTOR_DC_ENABLED */

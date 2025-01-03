@@ -9,11 +9,11 @@
  * 
  */
 
-#ifdef MOTOR_DC_ENABLED
+
 
 /* Includes ------------------------------------------------------------------*/
-#include "dcmotor.h"
-
+#include "./dcmotor.h"
+#ifdef MOTOR_DC_ENABLED
 
 void Motor_Init(Motor_Config * motor, GPIO_TypeDef  * DIR_Port, uint16_t DIR_Pin, TIM_HandleTypeDef * TIM, uint32_t TIM_Channel){
     /*  Attach GPIO and TIM to Motor*/
@@ -46,7 +46,6 @@ void Motor_Set_Speed(Motor_Config * motor, uint8_t duty_cycle){
 
 void Motor_Set_Direction(Motor_Config * motor, uint8_t direction){
 	HAL_GPIO_WritePin(motor->DIR_Port, motor->DIR_Pin, direction);
-
 }
 
 void Motor_Toggle_Direction(Motor_Config * motor){
@@ -62,3 +61,4 @@ uint8_t Motor_Get_Direction(Motor_Config * motor){
 }
 
 #endif
+
